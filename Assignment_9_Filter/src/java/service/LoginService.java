@@ -28,9 +28,7 @@ public class LoginService {
        
         
         if(user!=null && user.getUserId().equals(userId) && password.equals(password)){
-            
             return true;
-            
         } else{
             return false;
         }
