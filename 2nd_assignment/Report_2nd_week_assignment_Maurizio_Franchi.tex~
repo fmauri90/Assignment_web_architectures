@@ -1,0 +1,325 @@
+\documentclass[12pt,a4paper]{report}
+%\documentclass[8pt,a4paper,twocolumn]{article}
+%\documentclass[12pt,a4paper,titlepage]{article}
+%\documentclass[12pt,a4paper,titlepage]{report}
+%\documentclass[a4paper]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{babel}
+%\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+
+\usepackage{footnote}
+\makesavenoteenv{tabular}
+
+%\usepackage{caption}
+
+
+\usepackage[hang,splitrule,multiple]{footmisc}
+\footnotemargin 2.5mm %Allineamento piè di pagina
+
+
+\usepackage[a4paper,top=2.50cm,bottom=2.50cm,left=2.5cm,right=2.5cm]{geometry}
+\linespread{1.1}
+\usepackage[tableposition=top,figureposition=bottom,font=small,format=hang]{caption}
+\captionsetup[table]{skip=\medskipamount}
+
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{multicol} 
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{verbatim} %Per inserire codice
+\usepackage{url} %Per inserire siti
+\usepackage[colorlinks]{hyperref}
+\usepackage{amsmath}
+%\usepackage{mathtools}
+\begin{comment}
+\makeatletter
+\newcommand{\xRightarrow}[2][]{\ext@arrow 0359\Rightarrowfill@{#1}{#2}}
+\makeatother
+\end{comment}
+\usepackage{amssymb}
+%\usepackage{movie15}
+\usepackage[autoplay,loop]{animate} %Per inserire animazioni
+\usepackage{listings} %Per inserire codice
+\usepackage[usenames]{color} %Per permettere la colorazione dei caratteri
+\usepackage{enumitem}%per usare \begin{itemize}[leftmargin=-.5in]
+
+\newenvironment{listamia}% 
+{\begin{itemize}\setlength{\itemsep}{0cm}}
+	{\end{itemize}
+}
+
+
+
+\lstnewenvironment{codice_c}[1][]
+{\lstset{basicstyle=\small, columns=fullflexible,
+		keywordstyle=\color{red}\bfseries, commentstyle=\color{blue}, language=C, numbers=left, numberstyle=\tiny, stepnumber=2, tabsize=5, numbersep=5pt, showstringspaces=true, frame=tbrl, captionpos=t, float=htbp, #1}}{}
+\lstloadlanguages{c}
+
+\lstnewenvironment{codice_c_pic}[1][]
+{\lstset{basicstyle=\footnotesize, columns=fullflexible,
+		keywordstyle=\color{red}\bfseries, commentstyle=\color{blue}, language=C, numbers=left, numberstyle=\tiny, stepnumber=2, tabsize=5, numbersep=5pt, showstringspaces=true, frame=tbrl, captionpos=t, float=htbp, #1}}{}
+\lstloadlanguages{c}
+
+\lstnewenvironment{codice_c_piccolo}[1][]
+{\lstset{basicstyle=\footnotesize, columns=fullflexible,
+		keywordstyle=\color{red}\bfseries, commentstyle=\color{blue}, language=C, numbers=left, numberstyle=\tiny, stepnumber=2, tabsize=3, numbersep=5pt, showstringspaces=true, frame=tbrl, captionpos=t, float=htbp, #1}}{}
+\lstloadlanguages{c}
+
+\lstloadlanguages{python}
+\lstnewenvironment{codice_py}[1][]
+{\lstset{basicstyle=\small, columns=fullflexible,
+		keywordstyle=\color{red}\bfseries, commentstyle=\color{blue}, language=python, numbers=left, numberstyle=\tiny, stepnumber=2, tabsize=5, numbersep=5pt, showstringspaces=true, frame=tbrl, captionpos=t, float=htbp, #1}}{}
+\lstloadlanguages{python}
+
+
+\usepackage{verbatim}
+
+
+%\usepackage{float}
+
+\usepackage{amsthm}
+\theoremstyle{plain} 
+\newtheorem{thm}{Teorema}[section] 
+\newtheorem{cor}[thm]{Corollario} 
+\newtheorem{lem}[thm]{Lemma} 
+\newtheorem{prop}[thm]{Proposizione} 
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definizione}[section]
+%\newtheorem{defn}{Definizione}[chapter] 
+
+\theoremstyle{remark} 
+\newtheorem{oss}{Osservazione} 
+
+\newcommand\Epsilon{\mathcal{E}}
+\newcommand\Tau{\mathcal{T}}
+\newcommand{\virgolette}[1]{``#1''}
+\newcommand\oo{{\footnotesize 00}}
+\newcommand\ouno{{\footnotesize 0}}
+\newcommand{\vect}[1]{\vec{\boldsymbol{#1}}}	%nuovo comando \vect per fare i vettori
+\newcommand{\dpar}{\mathop{}\!\partial}
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand\eps{\varepsilon_{_0}}
+
+
+%\title{{\Huge\textbf{}}}
+\vspace{-10cm}
+%\textbf{\textit{}}	per grassetto cosivo
+\title{\textbf{Extending the simple web server}}
+\author{Maurizio Franchi}
+\date{2 October 2015}
+
+\begin{document}
+%\fontsize{5mm}{7mm}\selectfont
+%\fontsize{3.3mm}{3.8mm}\selectfont %per cambiare dimensione carattere e interlinea
+\fontsize{4.4mm}{5.1mm}\selectfont
+\maketitle
+
+
+
+\newpage
+%\begin{multicols}{2}
+%\lipsum[2]
+%\vspace{-1cm}
+
+
+
+%\begin{center}
+%\begin{Large}
+%%%% INSERISCI QUI IL TITOLO
+%REPORT OF SKLEARN
+%\end{Large}
+% 
+%
+%\end{center}
+%\begin{center}
+%%% INSERISCI AUTORI
+% \large{\verb+Maurizio Franchi}}
+%\end{center}
+
+% % % % % % % % DA QUI INIZIA IL TESTO
+% % nel testo per andare effettivamente a capo anche sul compilato servono due a capi (invii)
+
+%\vspace{2cm}
+
+
+\section*{Introduction}
+
+In this report I discuss two projects: \verb+Square Root+ and \verb+Notebook+. In each of two projects there are a server and a client. The server and the client communicate through the \verb+RMI API+. 
+
+
+
+\section*{Implemention}
+
+In this section I explain how I implemented the Square Root and the Notebook project.
+
+\subsection*{Square Root}
+
+For the Square Root I decide to create two distinct java project one for the server called \verb+SqrtServer+ and another for the client called \verb+sqrtClient+.\\
+In the \verb+Server+ I create the java packege called \verb+sqrtserver+ in which there are a interface called \verb+ISquareRoot+ and a java class called \verb+SqrtImpl+.\\
+In the java interface there is the following function:
+
+\begin{codice_py}
+double getSquare(int a) throws RemoteException;
+\end{codice_py}
+
+This function called \verb+getSquare+ is double and accept a integer value a.\\
+
+In the java class \verb+SqrtImpl+ through the following code 
+
+\begin{codice_py}
+LocateRegistry.createRegistry(1099);
+\end{codice_py}
+
+I create a registry on the default port, then through the code below:
+
+\begin{codice_py}
+ISquareRoot stub = (ISquareRoot)UnicastRemoteObject.exportObject(sqrt, 0);
+\end{codice_py}
+
+displays all methods that implements and then through the following code:\\
+
+%\vspace{0.05cm}
+\noindent\verb+System.out.println("Ready for RMI's");+
+\vspace{0.1cm}
+
+I print that the server is ready.\\
+
+In the \verb+Client+ I created two different packages: 
+
+\begin{itemize}
+\item \verb+sqrtserver+ in which there is the java interface \verb+ISquareRoot+ (the same interface presents in the Server);
+\item \verb+sqrtclient+ in which there is the java class \verb+SqrtUser+.
+\end{itemize}
+\newpage
+In the java class \verb+SqrtUser+ there are the main in which I set to integer s1 and s1 is the number 25 and I set also s2 as double. After that:
+
+\begin{itemize}
+\item I get to the register that I create in the server;
+\item I set s2 as the square root of s1;
+\item I print the result.
+\end{itemize}
+
+\subsection*{Notebook}
+
+For the Notebook, as for the Square Root, I decide to create two distinct java project one for the server called \verb+NotebookServer+ and another for the client called \verb+notebookclient+.\\
+In the \verb+Server+ I create the java packege called \verb+notebookserver+ in which there are two interfaces called \verb+INotebook+ and \verb+Server+ ans two java classes called \verb+ServerImpl+ and \verb+Notebook+.\\
+In the java interface \verb+INotebook+ there is the two following functions:
+
+\begin{codice_py}
+public void add(String s) throws RemoteException;
+public void read() throws RemoteException;
+\end{codice_py}
+
+in which the \verb+add+ function, that accepts only string, add a string t the Notebook and the function \verb+read+ read the string in the Notebook.
+
+In the second interface \verb+Server+ there are the function below:
+
+\begin{codice_py}
+public void sign(INotebook n) throws RemoteException;
+\end{codice_py}
+
+This function create a remote method sign for the Notebook.\\
+
+In the java class \verb+Notebook+ through the following code:
+\begin{codice_py}
+public LinkedList<String> str = new LinkedList<>();
+\end{codice_py}
+I create a list of strings and then through the function \verb+add+ and \verb+read+ the class add and read the list of the strings.
+
+In the java class \verb+ServerImpl+ through the following code:
+\begin{codice_py}
+Server engine = new ServerImpl(1);
+Server stub = (Server) UnicastRemoteObject.exportObject(engine, 0);
+Server engine2 = new ServerImpl(2);
+Server stub2 = (Server) UnicastRemoteObject.exportObject(engine2, 0);
+\end{codice_py}
+
+I create two different server \verb+engine+ and \verb+engine2+ and put the servers in the registry.
+
+After that through the following code:
+\begin{codice_py}
+Registry registry = LocateRegistry.createRegistry(1099);
+\end{codice_py}
+I create the regestry in the default port.\\
+Then through the following code:
+
+\begin{codice_py}
+System.out.println("s1 and s2 bound");
+\end{codice_py}
+
+I print that the two server are ready.
+
+
+In the \verb+Client+ I created two different packages: 
+
+\begin{itemize}
+\item \verb+notebookserver+ in which there is the java interface \verb+INotebook+, \verb+Server+ and \verb+Notebook+ (the same interfaces and class present in the Server);
+\item \verb+notebookclient+ in which there is the java class \verb+NotebookUser+.
+\end{itemize}
+
+In the java class \verb+NotebookUser+ there are the main in which I verify if there is the SecurityManager and if there isn't I create it. After that:
+
+\begin{itemize}
+\item I get to the register that I create in the server;
+\item I recall the two server;
+\item through the function sign I sign the two servers to the Notebook
+\end{itemize}
+
+After that I print the result.
+
+
+
+\section*{Deployment}
+
+\subsection*{Square Root}
+
+To start the two project Server and Client I create for each project their jar with the command \verb+Clean and built+ and then I go to the property of each project, I click on Run and in the field VM Options I put:\\
+\verb+-cp /path in with there is notebookclient/notebookclient/src;/path in with there is notebookclient/notebookclient/notebookclient/dist/notebookclient.jar -Djava.security.policy=file:/path in which there is all.policy/all.policy -Djava.rmi.server.codebase=file:/path in with there is notebookclient/notebookclient/build/classes+.
+This id for the client. It is the same for the server.
+
+The result is: 
+
+\begin{figure}[pht!]
+\centering
+\includegraphics[width=0.7\textwidth]{output_sqrtserver.png}
+\caption{The output of the server of Square Root}
+\label{output_notebookclient.png}
+\end{figure}
+
+\begin{figure}[pht!]
+\centering
+\includegraphics[width=0.7\textwidth]{output_sqrtclient.png}
+\caption{The output of the client of Square Root}
+\label{output_notebookclient.png}
+\end{figure}
+
+\subsection*{Notebook}
+
+To start the two project Server and Client I create for each project their jar with the command \verb+Clean and built+ and then I go to the property of each project, I click on Run and in the field VM Options I put:\\
+\verb+-cp /path in with there is notebookclient/notebookclient/src;/path in with there is notebookclient/notebookclient/notebookclient/dist/notebookclient.jar -Djava.security.policy=file:/path in which there is all.policy/all.policy -Djava.rmi.server.codebase=file:/path in with there is notebookclient/notebookclient/build/classes+.
+This id for the client. It is the same for the server.
+
+The result is: 
+
+\begin{figure}[pht!]
+\centering
+\includegraphics[width=0.7\textwidth]{output_NotebookServer.png}
+\caption{The output of the server of Notebook}
+\label{output_notebookclient.png}
+\end{figure}
+
+\begin{figure}[pht!]
+\centering
+\includegraphics[width=0.7\textwidth]{output_notebookclient.png}
+\caption{The output of the client of Notebook}
+\label{output_notebookclient.png}
+\end{figure}
+
+
+
+\end{document}
